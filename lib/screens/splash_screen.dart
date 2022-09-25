@@ -4,40 +4,34 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        width: double.infinity,
-        color: Colors.white,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            Image.asset('assets/img/start_image.jpg'),
-            Column(
-              children: <Widget>[
-                Text('Test de Personalidad para Scrum',
-                    style: Theme.of(context).textTheme.headline1,
-                    textAlign: TextAlign.center),
-                Text(
-                  'Haciendo la eleccion mas sencilla',
-                  style: Theme.of(context).textTheme.headline2,
-                  textAlign: TextAlign.center,
-                )
-              ],
-            ),
-            MaterialButton(
-              elevation: 10.0,
-              minWidth: 170.0,
-              height: 50.0,
-              color: Theme.of(context).primaryColor,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8.0),
-              ),
-              child: Text('Get Started',
-                  style: TextStyle(color: Colors.white, fontSize: 20.0)),
-              onPressed: () {},
-            ),
-          ],
+      //Made Functions
+      body: Center(
+          child: Container(
+        width: 300,
+        height: 100,
+        decoration: const ShapeDecoration(
+          shape: StadiumBorder(),
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              Color.fromRGBO(20, 252, 0, 100),
+              Color.fromRGBO(162, 192, 97, 100)
+            ],
+          ),
         ),
-      ),
+        child: MaterialButton(
+          materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+          shape: const StadiumBorder(),
+          child: const Text(
+            'A Samll Button',
+            style: TextStyle(color: Colors.white, fontSize: 20),
+          ),
+          onPressed: () {
+            print('Hello!');
+          },
+        ),
+      )),
     );
   }
 }
